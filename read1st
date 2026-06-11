@@ -1,0 +1,35 @@
+# EVO IT Tools
+
+Internal IT tools and scripts for Elevate Entertainment Group Mac deployments.
+
+---
+
+## New Mac Setup
+
+After enrolling the Mac in Apple Business, run this command in Terminal to install Datto RMM:
+
+```bash
+curl -o /tmp/Agent.zip "https://zinfandel.rmm.datto.com/download-agent/mac/66293e47-c134-49d2-861f-3fb35be697df" && unzip /tmp/Agent.zip -d /tmp/DattoInstall && sudo installer -pkg /tmp/DattoInstall/AgentSetup/CAG.pkg -target /
+```
+
+Once Datto installs, the following will deploy automatically via Datto RMM:
+- Microsoft 365 (Word, Excel, PowerPoint, Teams, Outlook)
+- Local admin account (evoadmin)
+- VPN profile (already deployed via Apple Business)
+
+---
+
+## Files
+
+| File | Description |
+|---|---|
+| `DattoRMM-EVO-v5.pkg` | Datto RMM wrapper PKG (hosted for ABE — work in progress) |
+| `install-datto.sh` | Manual Datto RMM install command |
+
+---
+
+## Notes
+
+- Apple Business Blueprint handles: Password Policy, Software Update, SonicWall Mobile Connect, OneDrive, Wi-Fi, PPPC, VPN
+- Datto RMM site: Elevate Support Center
+- IT support: help@elevategroup.com
